@@ -1,0 +1,542 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <style amp-custom>
+    h1,h2,h3,h4,h5,h6,p,span{font-family:'Roboto Condensed',sans-serif;font-size:10px;font-weight:400;margin:0;padding:0}
+    html{margin:0;padding:0;outline:none;text-decoration:none;font-family:'Roboto Condensed',sans-serif;box-sizing:border-box}
+    input,section,button,select{outline:none}
+    a,button{cursor:pointer;pointer-events:all;text-decoration:none;color:#000}
+    button{border:none;border-radius:7px;background:#fff}
+    .hvr-fade{display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);overflow:hidden;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:color,background-color;transition-property:color,background-color}
+    .hvr-fade:hover,.hvr-fade:focus,.hvr-fade:active{background-color:#80a4be;color:#fff}
+    .scrollbar{margin:7px;float:left;height:97%;width:98%;background:#fff;overflow-y:scroll;position:relative;z-index:1}
+    .force-overflow{min-height:100px;line-height:1.5;font-size:12px}
+    #style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+    #style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+    #style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+    .header{height:126px;background-color:#f2f2f2}
+    .stroke{stroke-width:.16em}
+    .StatusBarContainer{box-sizing:border-box;height:50px;box-shadow:0 0 30px 0 rgba(0,0,0,0.10);margin:30px auto 10px;border-radius:10px;background-color:#bbc6c3;position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;padding:6px;width:94vw;max-width:1300px}
+    .InputMailingName{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+    #configNameBtn{background-color:transparent}
+    #mailingNameIcon{height:28px;width:28px;margin-left:5px}
+    #nomeMailingInput{border:none;width:250px;margin-left:10px;font-size:16px;font-weight:500;background-color:transparent;font-family:'Roboto Condensed',sans-serif}
+    #nomeMailingInput::placeholder{color:#fff}
+    .StatusBarWrappers{height:100%;width:70px;box-shadow:0 0 30px 0 rgba(0,0,0,0.10);background-color:#fff;border-radius:5px;display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center;align-items:center;line-height:1;font-size:12px;box-sizing:border-box;cursor:pointer}
+    #QuantVeiculos{font-size:20px;font-family:'Roboto',sans-serif}
+    .graphicWrapper{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;width:auto}
+    #graphicIcon{position:relative;margin-left:5px;height:90%}
+    .graphicTexts{display:flex;flex-direction:column;margin:5px;justify-content:center;align-items:center}
+    #graphicNumber{font-size:20px}
+    #ponteiro{position:absolute;transform-origin:center 90%;bottom:10px;width:200px}
+    .excluidosWrapper{width:76px}
+    #QuantExcluidos{font-size:20px;font-family:'Roboto',sans-serif}
+    #QuantCorp{font-size:20px;font-family:'Roboto',sans-serif;margin-right:5px}
+    #EnvioExpresIcon{height:25px}
+    #envioEmailCorpIcon{height:25px;margin-right:6px}
+    .EnvioExpresWrapper{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:auto;padding:5px}
+    .EnvioCorpWrapper{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:center;width:auto;padding:5px 10px}
+    .EnvioExpresWrapper span{margin-left:5px;font-family:'Roboto Condensed',sans-serif;text-align:left}
+    #VerTodosIcon{height:25px}
+    .VerTodosWrapper{display:flex;flex-direction:row;flex-wrap:nowrap;width:auto;padding:5px}
+    .VerTodosWrapper span{margin-left:5px;font-family:'Roboto Condensed',sans-serif;text-align:left}
+    #ExibirCanvasIcon{height:25px}
+    .ExibirCanvasWrapper{display:flex;flex-direction:row;flex-wrap:nowrap;width:auto;padding:5px}
+    .ExibirCanvasWrapper span{margin-left:5px;font-family:'Roboto Condensed',sans-serif;text-align:left}
+    .verTodosLineActionsWrapper{position:relative;display:flex;align-items:center;justify-content:flex-start;width:70px;height:30px;margin:5px 60px;padding:5px;border-radius:7px}
+    .checkIcon{width:20px;height:20px;margin-right:5px;cursor:pointer}
+    .verTodosLineActionsWrapper span{font-size:14px;font-family:'Roboto',sans-serif;font-weight:500;color:#26547c;cursor:pointer}
+    .verTodosLineActionsWrapper:hover{background-color:silver}
+    .verTodosDropdownActionsWrapper{position:absolute;display:none;z-index:200;box-shadow:0 20px 50px 10px rgba(0,0,0,0.10);background-color:#fff;border-radius:7px;left:60px;padding:20px}
+    .verTodosDropdownList{position:relative;display:flex;flex-direction:column;flex-wrap:nowrap;list-style-type:none;padding:0;margin:0}
+    .verTodosDropdownList li{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;list-style-position:outside}
+    .verTodosDropdownList li button{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;transition:.5s ease all;padding:5px 10px;margin:5px 0}
+    .verTodosDropdownList li button:hover{background-color:silver}
+    .verTodosDropdownList li span{font-family:'Roboto',sans-serif;font-size:14px;margin-left:5px;font-weight:500;color:#26547c}
+    #verTodosBloquearSvg,#verTodosFavoritarSvg,#verTodosEnviarImaxSvg,#verTodosEnviarEmailSvg,#verTodosFollowSvg,#verTodosEtiquetasSvg{width:30px;height:30px}
+    .verTodosContainer{position:relative;display:grid;grid-template-columns:1fr;grid-template-rows:470px;margin:0 40px;justify-content:center}
+    .WhiteOnWhite{box-shadow:0 20px 30px 0 rgba(0,0,0,0.10);border-radius:8px}
+    .ListarWrapper{position:relative}
+    .tabs{position:relative;height:450px;clear:both;margin:15px 0 0}
+    .tab{float:left}
+    .tab label{background:#eee;padding:10px 6.5px;border:1px solid #ccc;margin-left:-1px;position:relative;left:1px;border-radius:5px 5px 0 0;cursor:pointer}
+    .tab label span{font-size:18px;margin:0 10px;font-weight:500;color:#26547c}
+    .tab [type=radio]{display:none}
+    .content{position:absolute;top:28px;left:0;background:#fff;right:0;bottom:0;padding:6px;border:1px solid #ccc;border:none;border-top:.5px solid #ccc}
+    [type=radio]:checked ~ label{background:#fff;border-bottom:1px solid #fff;z-index:2}
+    [type=radio]:checked ~ label ~ .content{z-index:1}
+    .tabsPlus{position:absolute;right:0;top:-10px;width:30px;height:50px;box-sizing:border-box;border:.5px solid #ccc}
+    #TabsPlusIcon{position:relative;bottom:7px}
+    .tagClienteWrapper{position:fixed;z-index:50;bottom:0;display:block;right:50%;transform:translateX(50%);padding:10px 30px;background-color:#26547c;color:#fff;border-radius:7px 7px 0 0}
+    .tagCreditosWrapper{position:fixed;z-index:50;bottom:0;display:block;right:50%;transform:translateX(50%);padding:10px 30px;background-color:#26547c;color:#fff;border-radius:7px 7px 0 0}
+    .coinBtn{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;padding:10px 15px;margin:10px;box-shadow:0 0 30px 0 rgba(0,0,0,0.40);background-color:#1f8a70;color:#fff;font-weight:600;transition:.5s ease all}
+    .coinBtn:hover{box-shadow:0 10px 40px 0 rgba(0,0,0,0.20);background-color:#26547c}
+    #coinsSvg{width:30px}
+    .coinBtn span{font-size:14px;margin-left:10px;font-family:'Roboto',sans-serif}
+    table{border-spacing:0;width:99%;border:1px solid #ddd}
+    th{cursor:pointer;vertical-align:middle;color:#26547c}
+    th span{display:inline-flex;font-size:12px;font-weight:600;margin-right:5px}
+    .sortSvg{width:15px;position:absolute;display:inline-flex}
+    .sortSvgPath{fill:#eee2df}
+    th,td{text-align:left;padding:12px;border-bottom:1px solid silver;transition:.5s all ease}
+    td{white-space:pre-wrap;word-wrap:break-word}
+    tr:nth-child(even){background-color:#f2f2f2}
+    tr:hover,tr:nth-child(even):hover{background-color:#eee2df}
+    #noHover:hover{background-color:#fff}
+    .lineDiv{width:99%;border-bottom:2px solid #26547c;position:absolute;top:45px}
+    td:nth-child(1){position:relative;width:22px}
+    td:nth-child(2){position:relative;width:100px}
+    td:nth-child(3){position:relative;width:160px}
+    td:nth-child(4){position:relative;width:70px}
+    td:nth-child(5){position:relative;width:130px}
+    td:nth-child(6){position:relative;width:90px}
+    td:nth-child(7){position:relative;width:80px;white-space:pre-wrap;word-wrap:break-word}
+    td:nth-child(8){position:relative;width:90px}
+    .tooltip-verTodos{position:relative;text-align:center;z-index:100}
+    .tooltip-verTodos::before,.tooltip-verTodos::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+    .tooltip-verTodos::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:40px;border-color:transparent transparent #415b76}
+    .tooltip-verTodos::after{content:attr(data-tooltip-verTodos);background:#415b76;border-radius:4px;color:#fff;top:50px;width:87px;padding:5px;left:-12px}
+    .tooltip-verTodos:hover::before,.tooltip-verTodos:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+    .tooltip-verTodos:active::before,.tooltip-verTodos:active::after{opacity:0;visibility:hidden}
+    </style>
+
+
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <!-- <link rel="stylesheet" href="css/verTodosStyle.css"> -->
+
+        <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  </head>
+
+
+  <body>
+
+<!-- header space -->
+<div class="header"></div>
+<!-- header space -->
+
+<div class="tagClienteWrapper">
+  <div>NOME DO CLIENTE</div>
+</div>
+
+
+
+
+<div class="tagCreditosWrapper">
+  <div>
+      <button class="coinBtn">
+            <svg id="coinsSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                  <path fill="#eee2df" d="M442.7,150.2L442.7,150.2c3.4-7.1,5.3-14.5,5.3-22.2V96c0-53-86-96-192-96S64,43,64,96c0-2.6,0.4-5.2,0.8-7.8C25.1,105.8,0,131.4,0,160v32c0,29.7,27,56.2,69.3,73.8l0,0C66,272.9,64,280.4,64,288v32c0,11.3,4.1,22,11.2,32C68.1,362,64,372.8,64,384v32c0,53,86,96,192,96s192-43,192-96v-32c0-11.4-4.2-22.3-11.5-32.5c-0.1,0.1-0.1,0.2-0.2,0.2c5.4-7.6,9.6-15.6,10.9-24c39.7-17.6,64.8-43.2,64.8-71.8v-32C512,194.3,485,167.8,442.7,150.2z M256,16c103.7,0,176,42.2,176,80c0,37.8-72.3,80-176,80S80,133.8,80,96C80,58.2,152.3,16,256,16z M16,160c0-18.7,17.7-38.3,48-53.5V128c0,53,86,96,192,96c15.8,0,31.2-1.1,45.9-2.9C272.5,232.4,235.3,240,192,240C88.3,240,16,197.8,16,160z M432,384c0,37.8-72.3,80-176,80S80,421.8,80,384c0-6.3,2.7-12.7,6.5-19c0,0-0.1-0.1-0.1-0.2C118.6,395.3,182.4,416,256,416c73.7,0,137.2-20.9,169.4-51.3c0,0,0,0-0.1,0.1C429.3,371.1,432,377.6,432,384z M365.9,349.1C336.6,360.4,299.3,368,256,368c-103.7,0-176-42.2-176-80c0-5.4,1.9-10.9,4.7-16.4c15.7,5.3,33,9.4,51.6,12.2C160.2,323.3,233.3,352,320,352c15.9,0,31.3-1.1,46.1-2.9C366,349.1,366,349.1,365.9,349.1z M320,304c-41.1,0-76.9-6.8-105.6-17.1c90.2-5.3,161.5-41.5,168.8-87.2c21.8-9.7,39.2-21.7,50.4-35.4c0,0,0,0,0,0c38.8,15.8,62.4,38.3,62.4,59.6C496,261.8,423.7,304,320,304z M290.2,119.3c0-3.4-2.7-6-8.1-7.7c-5.4-1.8-17.3-4-35.9-6.7c-16.7-2.3-29.7-4.7-39.1-7s-17-5.6-22.8-9.7c-5.8-4.2-8.8-9.1-8.8-14.6c0-7.3,5.3-13.8,15.7-19.6c10.4-5.8,26.9-9.3,49.3-10.6V32h30.3v11.4c33.9,1.7,55.8,9.5,65.8,23.6l-41.8,7c-8.2-9.6-20.7-14.4-37.8-14.4c-8.6,0-15.4,1.1-20.6,3.3c-5.2,2.1-7.8,4.8-7.8,7.8c0,3.1,2.5,5.5,7.5,7.2c5,1.7,15.7,3.7,32.1,6.2c18,2.7,32.1,5.2,42.3,7.6c10.3,2.4,18.4,5.7,24.5,9.9c6.1,4.2,9.2,9.2,9.2,14.8c0,8.7-6.3,15.9-18.9,21.7c-12.6,5.8-30.8,9.2-54.6,10.2V163h-30.3v-14.8c-39.7-1.7-64.2-11.1-73.7-28.3l46.9-5c4.3,10.8,18.7,16.2,43.1,16.2c11.4,0,19.8-1.2,25.2-3.5S290.2,122.6,290.2,119.3z"/>
+            </svg>
+            <span>ADICIONAR CRÉDITOS</span>
+      </button>
+</div>
+</div>
+
+
+
+
+<!-- barra de status -->
+<div class="StatusBarContainer">
+  <div class="InputMailingName">
+    <button id="configNameBtn">
+      <svg id="mailingNameIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 57.4 57.4" xml:space="preserve">
+        <path fill="none" stroke="#394553" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M10.9,39.3l-4.4,6.1l5.5,5.5l6.1-4.4c1.7,1,3.5,1.8,5.4,2.3l1.3,7.4h7.8l1.3-7.4c1.9-0.5,3.7-1.3,5.4-2.3l6.1,4.4l5.5-5.5l-4.3-6.1c1-1.7,1.8-3.5,2.3-5.5l7.4-1.2v-7.8l-7.4-1.2c-0.5-1.9-1.2-3.8-2.2-5.4l4.3-6.1l-5.5-5.5l-6.1,4.3c-1.7-1-3.5-1.7-5.4-2.2l-1.2-7.4h-7.8l-1.2,7.4c-1.9,0.5-3.8,1.2-5.4,2.2l-6.1-4.3l-5.5,5.5l4.3,6.1c-1,1.7-1.7,3.5-2.2,5.4l-7.4,1.3v7.8l7.4,1.3C9.1,35.8,9.9,37.6,10.9,39.3z"/>
+        <circle fill="none" stroke="#394553" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="28.7" cy="28.7" r="8"/>
+      </svg>
+    </button>
+    <input id="nomeMailingInput" type="text" placeholder="Nome do mailing">
+  </div>
+  <div class="StatusBarWrappers VeiculosWrapper hvr-fade">
+    <span id="QuantVeiculos">296</span>
+    <span>VEÍCULOS</span>
+  </div>
+  <div class="StatusBarWrappers graphicWrapper hvr-fade">
+      <svg id="graphicIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 57.3 31.1" xml:space="preserve">
+        <path fill="#A2A9AD" d="M7.1,28.3C8.1,18,16.5,10,26.7,10s18.6,8,19.6,18.3h4.2C50.3,16.4,40.6,6.8,28.7,6.8C16.7,6.8,7.1,16.4,7.1,28.3L7.1,28.3z"/>
+        <path fill="#F5333F" d="M46.2,6.2L43.5,10c5.5,4.3,9,10.9,9.1,18.4h4.7C57.2,19.4,52.9,11.3,46.2,6.2z"/>
+        <path fill="#F2CD00" d="M3.3,15.4C1.2,19.3,0,23.7,0,28.4h4.7c0.1-3.8,1-7.4,2.7-10.6L3.3,15.4z"/>
+        <path fill="#00B189" d="M8.6,15.7C12.8,9.2,20.2,4.9,28.7,4.9c4.7,0,9.2,1.4,12.9,3.8l2.7-3.8c-4.5-2.9-9.8-4.6-15.6-4.6c-10.1,0-19,5.2-24.1,13.1L8.6,15.7z"/>
+        <path id="ponteiro" d="M30,27.2L28.7,0.8l-1.3,26.4c-0.5,0.4-0.9,1-0.9,1.8c0,1.2,1,2.2,2.2,2.2s2.2-1,2.2-2.2C30.9,28.2,30.5,27.6,30,27.2z"/>
+      </svg>
+    <div class="graphicTexts">
+      <span id="graphicNumber">3000</span>
+      <span>CONTATOS</span>
+    </div>
+  </div>
+  <div class="StatusBarWrappers excluidosWrapper hvr-fade">
+    <span id="QuantExcluidos">20</span>
+    <span>BLOQUEADOS</span>
+  </div>
+  <div class="StatusBarWrappers excluidosWrapper hvr-fade">
+    <span id="QuantExcluidos">20</span>
+    <span>FAVORITOS</span>
+  </div>
+
+  <button class="StatusBarWrappers EnvioCorpWrapper hvr-fade">
+    <span id="QuantCorp">20</span>
+    <span>E-MAIL CORP.</span>
+  </button>
+
+
+  <button class="StatusBarWrappers EnvioExpresWrapper hvr-fade">
+    <svg id="EnvioExpresIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.6 23.4" xml:space="preserve">
+      <path class="stroke" fill="none" stroke="#EEE2DF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M12.5,22.9h27.9c0.9,0,1.8-0.8,1.9-1.7l2.7-19c0.1-0.9-0.5-1.7-1.5-1.7H15.3l13.1,12.1L44,1.3"/>
+      <line class="stroke" fill="none" stroke="#EEE2DF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="21.2" y1="17" x2="7.5" y2="17"/>
+      <line class="stroke" fill="none" stroke="#EEE2DF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="18.2" y1="11.9" x2="0.5" y2="11.9"/>
+      <line class="stroke" fill="none" stroke="#EEE2DF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="13.8" y1="6.9" x2="5.8" y2="6.9"/>
+    </svg>
+    <span>SEGUIR</span>
+  </button>
+
+</div>
+<!-- barra de status -->
+
+<div class="verTodosLineActionsWrapper">
+  <div class="checkIcon">
+    <svg id="VerTodosCheckIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="#eee2df" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"/>
+    </svg>
+  </div>
+  <span>Ações</span>
+</div>
+
+<div class="verTodosDropdownActionsWrapper">
+  <ul class="verTodosDropdownList">
+    <li>
+      <button id="verTodosBloquearBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosBloquearSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <path fill="#eee2df" d="M592 288h-16v-48c0-44.1-35.9-80-80-80s-80 35.9-80 80v48h-16c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h192c26.5 0 48-21.5 48-48V336c0-26.5-21.5-48-48-48zm-144-48c0-26.5 21.5-48 48-48s48 21.5 48 48v48h-96v-48zm160 224c0 8.8-7.2 16-16 16H400c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16v128zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96zM48 480c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 2.7 0 5.3.6 7.9.8 2.2-11.3 6.7-21.6 13.1-30.7-6.9-1.1-13.8-2.1-21.1-2.1-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h288.4c-7.1-9.3-12.4-20.1-14.8-32H48z"/>
+        </svg>
+        <span>Bloquear</span>
+      </button>
+    </li>
+    <li>
+      <button id="verTodosFavoritarBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosFavoritarSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <path fill="#eee2df" d="M637.7 144.6l-14.1-14.2c-3.1-3.1-8.2-3.2-11.3 0L497.1 242.1l-53.3-53.4c-3.1-3.1-8.2-3.1-11.3 0l-14.2 14.1c-3.1 3.1-3.1 8.2 0 11.3l70.2 70.4c4.7 4.7 12.3 4.7 17 0l132.1-128.6c3.2-3.1 3.2-8.2.1-11.3zM313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/>
+        </svg>
+        <span>Favoritar</span>
+      </button>
+    </li>
+    <li>
+      <button id="verTodosDispararImaxBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosEnviarImaxSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#eee2df" d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h416c8.8 0 16 7.2 16 16v41.4c-21.9 18.5-53.2 44-150.6 121.3-16.9 13.4-50.2 45.7-73.4 45.3-23.2.4-56.6-31.9-73.4-45.3C85.2 197.4 53.9 171.9 32 153.4V112c0-8.8 7.2-16 16-16zm416 320H48c-8.8 0-16-7.2-16-16V195c22.8 18.7 58.8 47.6 130.7 104.7 20.5 16.4 56.7 52.5 93.3 52.3 36.4.3 72.3-35.5 93.3-52.3 71.9-57.1 107.9-86 130.7-104.7v205c0 8.8-7.2 16-16 16z"/>
+        </svg>
+        <span>Disparar por I’Max</span>
+      </button>
+    </li>
+    <li>
+      <button id="verTodosDispararEmailBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosEnviarEmailSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="#eee2df" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+        </svg>
+        <span>Disparar por E-mail Corporativo</span>
+      </button>
+      <li>     
+      <button id="verTodosFollowlBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosFollowSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <path fill="#eee2df" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96zm272 192c-79.6 0-144 64.4-144 144s64.4 144 144 144 144-64.4 144-144-64.4-144-144-144zm0 256c-61.8 0-112-50.2-112-112s50.2-112 112-112 112 50.2 112 112-50.2 112-112 112zm-135.8 0H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 4.4 0 8.6.8 12.9 1.3 2.9-10.7 6.9-21 11.7-30.8-8-1.5-16.1-2.5-24.5-2.5-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h346.9c-12.9-9.1-24.7-19.8-34.7-32zm190.1-128H512v-54.3c0-5.3-4.4-9.7-9.7-9.7h-12.6c-5.3 0-9.7 4.4-9.7 9.7v76.6c0 5.3 4.4 9.7 9.7 9.7h60.6c5.3 0 9.7-4.4 9.7-9.7v-12.6c0-5.3-4.4-9.7-9.7-9.7z"/>
+        </svg>
+        <span>Follow-up</span>
+      </button>
+      </li>
+      <li>
+      <button id="verTodosEtiquetasBtn" class="verTodosBtns" onclick="fecharModal()">
+        <svg id="verTodosEtiquetasSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="0px" y="0px" viewBox="0 0 64.3 49.6" xml:space="preserve">
+          <path fill="none" stroke="#eee2df" stroke-width="3" stroke-miterlimit="10" d="M47.2,21.6v-5.3c-2.3,0-4.3-1.9-4.3-4.3s1.9-4.3,4.3-4.3V1.3h-5.3c0,2.3-1.9,4.3-4.3,4.3c-2.3,0-4.3-1.9-4.3-4.3h-4.9c0,2.3-1.9,4.3-4.3,4.3S20,3.6,20,1.3h-4.9c0,2.3-1.9,4.3-4.3,4.3c-2.3,0-4.3-1.9-4.3-4.3H1.3v6.5c2.4,0,4.3,1.9,4.3,4.3s-1.9,4.3-4.3,4.3v4.9c2.4,0,4.3,1.9,4.3,4.3s-1.9,4.3-4.3,4.3v4.9c2.4,0,4.3,1.9,4.3,4.3S3.6,43,1.3,43v5.3h5.3c0-2.3,1.9-4.3,4.3-4.3c2.4,0,4.3,1.9,4.3,4.3h5.1"/>
+          <polyline fill="none" stroke="#eee2df" stroke-width="3" stroke-miterlimit="10" points="19.9,37.3 13.2,37.3 13.2,12.3 35.3,12.3 35.3,24.6   "/>
+          <path fill="none" stroke="#eee2df" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M24.4,36.9c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8c2.9-2.9,5.7-3.3,7-3.3s4.1,0.4,7,3.3c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8"/>
+          <path fill="none" stroke="#eee2df" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M24.4,44.6c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8c2.9-2.9,5.7-3.3,7-3.3s4.1,0.4,7,3.3c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8"/>
+          <path fill="none" stroke="#eee2df" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M24.4,29.2c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8c2.9-2.9,5.7-3.3,7-3.3s4.1,0.4,7,3.3c1.7,1.7,3.5,2.8,6.1,2.8c2.7,0,4.4-1.1,6.1-2.8"/>
+        </svg>
+        <span>Gerar Etiquetas</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!-- editor mailing -->
+<div class="verTodosContainer">
+
+
+
+<!-- janela 3: abas do mailing -->
+  <div class="AbasWrapper WhiteOnWhite">
+
+    <!-- abas -->
+    <div class="tabs">
+    
+   <div class="tab">
+       <input type="radio" id="tab-1" name="tab-group-1" checked>
+
+       <label for="tab-1">
+        <span>Press</span>
+      </label>
+       
+       <div class="content">
+           <!-- conteudo abas -->
+      <div class="lista-filtros scrollbar" id="style-3-scrollbar">
+        <div class="force-overflow">
+<table id="myTable">
+  <tr id="noHover" class="TableHeader">
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+    <th><input type="checkbox" class="tooltip-verTodos" data-tooltip-verTodos="Selecionar todos"></th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(1)" class="verTodostableHeader">
+      <span>Nome da Mídia</span>
+      <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(2)" class="verTodostableHeader"><span>Nome do Jornalista</span>
+          <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+        </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(3)" class="verTodostableHeader"><span>Cargo</span>
+          <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+        </svg>
+      </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(4)" class="verTodostableHeader"><span>Tema</span>
+      <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="verTodostableHeader"><span>Cidade(UF)</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="verTodostableHeader"><span>E-mail</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="verTodostableHeader"><span>Telefone</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+  </tr>
+  <div class="lineDiv"></div>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Exame</td>
+    <td>Alfredo Marcondes</td>
+    <td>Redator Chefe</td>
+    <td>Empreendedorismo e Startup / Motos / Automóveis</td>
+    <td>São Paulo - SP</td>
+    <td>nelson.niero@valor.com.br</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Folha de S.Paulo</td>
+    <td>Renato Jakitas</td>
+    <td>Reporter</td>
+    <td>Economia / Negócios</td>
+    <td>São Paulo - SP</td>
+    <td>raquel.inacio@estadao.com</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Istoé</td>
+    <td>José Roberto Caetano</td>
+    <td>Redator Chefe</td>
+    <td>Ciências / Tecnologia / comunicação Digital (Internet) / meio Ambiente</td>
+    <td>Rio de Janeiro - RJ</td>
+    <td>raquel.inacio@estadao.com</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Veja</td>
+    <td>Carlos Eduardo Sambrana</td>
+    <td>Diretor</td>
+    <td>Jurídico e Direito / contabilidade / direito Tributário</td>
+    <td>Manaus - AM</td>
+    <td>zinia.baeta@valor.com.br</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Portal Exame</td>
+    <td>Cláudio Gradilone</td>
+    <td>Redator Chefe</td>
+    <td>Tecnologia / Inovação / telecom</td>
+    <td>São Paulo - SP</td>
+    <td>alexa.salomao@</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Rádio Jovem Pan São Paulo</td>
+    <td>Denise Neumann</td>
+    <td>Editor</td>
+    <td>Telecom / Tecnologia / informática / games</td>
+    <td>São Paulo - SP</td>
+    <td>ligia.tuon@abril.com.br</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>O Estado de S.Paulo (Estadão):Economia e Negócios</td>
+    <td>Klester Cavalcante</td>
+    <td>Editor</td>
+    <td>Empresas / Negócios / varejo</td>
+    <td>São Paulo - SP</td>
+    <td>alexa.salomao@grupofolha.com.br</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Rádio 93 FM Adamantina</td>
+    <td>André Cardozo</td>
+    <td>Redator Chefe</td>
+    <td>Economia / Carreiras / Empresas PME</td>
+    <td>Adamantina - MG</td>
+    <td>alexa.salomao@</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Gestão Cooperativa (Brasília)</td>
+    <td>Mariana Desiderio</td>
+    <td>Redator Chefe</td>
+    <td>Tecnologia</td>
+    <td>Brasília - DF</td>
+    <td>alexa.salomao@</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Agromais</td>
+    <td>Lígia Tuon</td>
+    <td>Redator Chefe</td>
+    <td>Primeira Página / Nacional / Macroeconomia</td>
+    <td>Ribeirão Preto - SP</td>
+    <td>alexa.salomao@</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Informe Agropecuário</td>
+    <td>João Pedro Caleiro</td>
+    <td>Redator Chefe</td>
+    <td>Tecnologia / Inovação / telecom</td>
+    <td>São José do Rio Preto - SP</td>
+    <td>naiara.bertao@abril.com.br</td>
+    <td>(11)3037-2638 / 9502-46726 / 3037-2361</td>
+
+  </tr>
+</table>
+
+        </div>
+      </div>
+      <!-- conteudo abas -->
+       </div> 
+   </div>
+    
+
+   <div class="tab countAbas2">
+       <input type="radio" id="tab-2" name="tab-group-1">
+       <label for="tab-2">
+        <span>GOV</span>
+      </label>
+       
+       <div class="content">
+           stuff aba2
+       </div> 
+   </div>
+    
+
+   <div class="tab countAbas4">
+       <input type="radio" id="tab-4" name="tab-group-1">
+       <label for="tab-4">
+        <span>Latam</span>
+      </label>
+       
+       <div class="content">
+           stuff aba4
+       </div> 
+   </div>
+    
+
+    <div class="tab countAbas5">
+       <input type="radio" id="tab-5" name="tab-group-1">
+       <label for="tab-5">
+        <span>Target</span>
+      </label>
+     
+       <div class="content">
+           stuff aba5
+       </div> 
+   </div>
+
+
+    <div class="tab countAbas6">
+       <input type="radio" id="tab-6" name="tab-group-1">
+       <label for="tab-6">
+        <span>Influencers</span>
+      </label>
+     
+       <div class="content">
+           stuff aba6
+       </div> 
+   </div>
+
+
+    <div class="tab countAbas8">
+       <input type="radio" id="tab-8" name="tab-group-1">
+       <label for="tab-8">
+        <span>Correspondentes Internacionais</span>
+      </label>
+     
+       <div class="content">
+           stuff aba8
+       </div> 
+   </div>
+
+  
+</div>
+
+</div>
+
+
+  </div>
+
+</div>
+<!-- final editor mailing -->
+
+
+
+
+
+
+
+
+    <script src="js/verTodos.js"></script>
+  </body>
+</html>
